@@ -26,7 +26,9 @@ SECRET_KEY = '_)afvpg5a)hqy((wfdf$$8isj%y7ji$^)pg8u1(39jda3*h&&@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['saveit-live.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1','https://saveit-here.herokuapp.com/', config('SERVER', default='127.0.0.1')]
+
+#['https://saveit-here.herokuapp.com/', '127.0.0.1']
 
 
 # Application definition
