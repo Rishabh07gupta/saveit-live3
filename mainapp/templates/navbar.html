@@ -1,0 +1,40 @@
+
+{% load static %}
+
+
+<style>
+
+  header{
+    padding: 10px;
+    background-color: rgb(44, 43, 43);
+    color: blanchedalmond;
+}
+
+  h1{
+      font-size: 40px;
+      font-family: monospace;
+  }
+
+  
+  .logbt{
+      float: right;
+  }
+
+
+  .hello-msg{
+    font-size: 18px;
+    color: #fff;
+  }
+
+  .hbt{
+    margin-left: 1100px;
+  }
+</style>
+
+<header>
+  <h3>App Name</h3>
+  <span class="hello-msg">Hello, {{request.user}}</span>
+  <a class="hbt" href="{% url 'home' %}">Home</a>
+  <a href="{% url 'logout' %}"><button type="button" class="logbt" >Logout</button></a>
+
+</header>

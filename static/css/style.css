@@ -1,0 +1,171 @@
+*{
+    box-sizing: border-box;
+    list-style: none;
+    margin: 0%;
+}
+
+header{
+    padding: 25px;
+    text-align: center;
+    background-color: rgb(44, 43, 43);
+    color: blanchedalmond;
+}
+
+h1{
+    font-size: 40px;
+    font-family: monospace;
+}
+
+nav{
+    background-color: rgb(230, 227, 227);
+    overflow: hidden;
+}
+
+nav a{
+    display: block;
+    color: rgb(73, 40, 73);
+    text-decoration: none;
+    padding: 15px 20px;
+    float: left;
+}
+
+.container{
+    display: grid;
+    margin-left: 4px;
+    grid-auto-rows: minmax(200px, 500px);
+    grid-auto-columns: minmax(300px, 672px);
+
+}
+
+.items{
+    border: 0.5px solid white;
+    border-radius: 1px;
+}
+
+#aboutbox{
+    background-color: white;
+}
+
+#logbox{
+    background-color:  white;
+    grid-column-start: 2;
+    text-align: center;
+    padding-top: 100px;   
+}
+
+.form-floating{
+    margin-top: 10px;
+}
+
+.form-signin input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+    width: 250px;
+    height: 35px;
+    border: 5px hidden rgb(183, 183, 230);
+    border-radius: 5px;
+}
+
+.btn{
+    margin-top: 15px;
+    padding: 5px 20px 5px 20px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: rgb(226, 205, 205);
+}
+
+.foot{
+    background-color:rgb(230, 227, 227);
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.found, .found-name{
+    color: black;
+}
+
+.reg{
+    margin-top: 15px;
+}
+
+.user_card {
+    width: 350px;
+    margin-top: 10px;
+    margin-bottom: auto;
+    margin-left: 150px;
+    background: rgb(44, 43, 43);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+
+}
+
+.form_container {
+    margin-top: 20px;
+}
+
+#form-title{
+    color: blanchedalmond;
+    
+}
+
+.login_btn {
+    width: 100%;
+    background: rgb(243, 242, 240) !important;
+    color: black !important;
+    margin-bottom: 5px;
+}
+
+.login_btn:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+.login_container {
+    padding: 0 2rem;
+}
+.input-group-text {
+    background: #f7ba5b !important;
+    color: white !important;
+    border: 0 !important;
+    border-radius: 0.25rem 0 0 0.25rem !important;
+}
+.input_user,
+.input_pass:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+
+#messages{
+    background-color: grey;
+    color: #fff;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.input-group{
+    margin-bottom: 15px;
+}
+
+.mt a{
+    color: white;
+}
+
+.aboutimg{
+    margin-left: 60px;
+    margin-top: 30px;
+    border: 0.5px solid black ;
+    border-radius: 5px;
+}
+
+.mt p{
+    color: white;
+}

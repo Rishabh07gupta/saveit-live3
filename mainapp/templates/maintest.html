@@ -1,0 +1,125 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dropdown.css' %}">
+    <link rel="stylesheet" href="{% static 'css/modal.css' %}">
+
+    <title>{% block title %} Mainnav {% endblock title %}</title>
+
+
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" 
+    crossorigin="anonymous"></script>
+
+    <!--<script src="{% static 'js/modal.js' %}"></script>-->
+
+    <header>
+        <h1>}</h1>
+        <a href=""><button type="button" class="logbt" >Logout</button></a>
+    </header>
+
+    <main>
+
+        <div class="container">
+            <div class="item1">
+                
+                    <div class="searchbox">
+                        {% csrf_token %}
+                        <form action="" method="GET">
+                            <input class="searchform" type="text" name='q' placeholder="Search Customer">
+                            <button class="btn" type="submit">Search</button>
+                        </form>
+                    </div>
+
+                    <div class="addbt">
+                        <a href=""><button type="button" class="bt">Add Customer</button></a>
+                    </div>
+            </div>
+
+            <div class="item2">
+            
+                <div class="nav2">
+                    <!--<h2 class="cust">Customer Name</h2>-->
+                    {% block modal %}
+                    
+                    {% endblock modal %}
+                </div>
+            
+        
+                <div class="action">
+                    <div class="profile" onclick="menuToggle();">
+                        <div class="img">
+                            <img src="{% static 'img/setting.png' %}" alt="" width="30" height="30">
+                        </div>
+                    </div>
+                    <div class="menu">
+                        <h3>Setting</h3>
+                        <ul>
+                            <li><a href="">Account</a></li>
+                            <li><a href="">Password</a></li>
+                            <li><a href="">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <script>
+                    function menuToggle(){
+                        const toggleMenu = document.querySelector('.menu');
+                        toggleMenu.classList.toggle('active')
+                    } 
+                </script>
+
+                
+            </div>
+
+            <div class="item3">
+                <h3 class="custname">Customers</h3>
+                <div class="namecust">
+                    {% for customer in customers %}
+                        <h3 class="namecust1">{{customer.name}}</h3>
+                    {% endfor %}
+                    <!--
+                    {% for custadd in user.Customer.all %}
+                        <h3 class="namecust1">{{custadd.name}}</h3>
+                        <a href="{% url 'collection' custadd.id %}"><button type="button" class="btn btn-outline-primary">Add</button></a>
+                        <a href="{% url 'update_customer' custadd.id %}"><button type="button" class="btn btn-outline-primary">View profile</button></a>
+                        <a href="{% url 'delete_customer' custadd.id %}"><button type="button" class="btn btn-outline-primary">Delete</button></a>
+                        <hr>
+                    {% endfor %}
+                -->
+                </div> 
+            </div>
+
+            <div class="item4">
+                <div class="finalname">
+
+                    {% block content %}
+
+                    {% endblock content %}
+                <!--
+                    {% for things in user.CreditCollection.all %}
+                        <a href="{% url 'update_credit' things.id %}"><h3>{{things.customer}}|{{things.creditdate}}</h3></a>
+                        <hr>
+                    {% endfor %}
+
+                    {% for things in user.DebitCollection.all %}
+                        <a href="{% url 'update_debit' things.id %}"><h3>{{things.customer}}|{{things.debitdate}}</h3></a>
+                        <hr>
+                    {% endfor %}
+                    -->
+                </div>
+            </div>
+
+
+
+
+
+</body>
+</html>

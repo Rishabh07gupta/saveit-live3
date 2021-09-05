@@ -1,0 +1,95 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block title %}customer collection{% endblock title %}
+
+{% block modal %}
+
+    <button type="button" class="cred" data-bs-toggle="modal" data-bs-target="#credit">Credit</button>
+    <button type="button" class="deb" data-bs-toggle="modal" data-bs-target="#debit">Debit</button>
+                
+{% endblock modal %}
+
+{% block content %}
+
+<!--Modal for Credit-->
+<div class="modal fade" id="credit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Credit Amount</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form method="post">
+      {% csrf_token %}
+      <div class="modal-body">
+
+            <div class="mod1">
+                <label class="form-label">Date</label>
+                <input type="date" name="creditdate" class="form-control" aria-describedby="Form name">
+            </div>
+
+            <div class="mod2">
+                <label class="form-label">Credit Amount</label>
+                <input type="number" name="credit" class="form-control" aria-describedby="credit">
+            </div>
+
+            <div class="mod3">
+                <label class="form-label">Description</label>
+                <input type="text" name="creditdescription" class="form-control" aria-describedby="description">
+            </div>  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Add</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!--Modal for Debit-->
+<div class="modal fade" id="debit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Debit Amount</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form method="post">
+      {% csrf_token %}
+        <div class="modal-body">
+
+            <div class="mod1">
+                <label class="form-label">Date</label>
+                <input type="date" name="debitdate" class="form-control" aria-describedby="Form name">
+            </div>
+
+            <div class="mod2">
+                <label class="form-label">Debit Amount</label>
+                <input type="number" name="debit" class="form-control1" aria-describedby="debit">
+            </div>
+
+            <div class="mod3">
+                <label class="form-label">Description</label>
+                <input type="text" name="debitdescription" class="form-control" aria-describedby="description">
+            </div>  
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Add</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% for things in credits %}
+    <h3>{{things.creditdate}}</h3>
+{% endfor %}
+
+{% for things in debits %}
+    <h3>{{things.debitdate}}</h3>
+{% endfor %}
+
+{% endblock content %}

@@ -1,0 +1,239 @@
+*{
+    box-sizing: border-box;
+    list-style: none;
+    margin: 0%;
+    font-family: monospace;
+}
+
+header{
+    padding: 20px;
+    background-color: rgb(177, 140, 177);
+    color: blanchedalmond;
+}
+
+h1{
+    text-align: left;
+}
+
+.logbt{
+    float: right;
+    background-color: rgb(19, 17, 19);
+    color: white;
+    padding: 0px 10px 10px 10px;
+}
+
+header a:hover{
+    cursor: pointer;
+}
+
+header button a{
+    text-decoration: none;
+}
+
+
+.container{
+    display: grid;
+    grid-template-columns: 350px 1015px;
+    grid-template-rows: 110px 110px;
+    grid-gap: 1px;
+}
+
+.item1{
+    background-color: rgb(247, 216, 243);
+    border: 1px solid rgb(245, 191, 245); 
+}
+
+.item2{
+    background-color: rgb(247, 216, 243); 
+    grid-column-start: 2;
+    border: 1px solid rgb(245, 191, 245);  
+}
+
+.item3{
+    background-color: rgb(248, 225, 245);
+    border: 1px solid rgb(245, 191, 245);
+    grid-row-start: 2;
+    grid-row-end: 361;
+}
+
+.item4{
+    background-color: rgb(248, 225, 245);
+    border: 1px solid rgb(245, 191, 245);
+    grid-row-start: 2;
+    grid-row-end: 361;
+    
+}
+
+.searchbox{
+    margin-top: 10px;
+    margin-left: 25px;
+}
+
+.searchform{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border: hidden;
+    border-radius: 5px;
+}
+
+.addbt{
+    margin-top: 20px;
+    margin-left: 60px;
+    margin-bottom: 20px;
+}
+
+.btn{
+    border-radius: 3px;
+}
+
+.btn:hover{
+    cursor: pointer;
+}
+
+.bt{
+    padding: 10px 30px 10px 30px;
+    background-color: rgb(42, 148, 42);
+    color: black;
+    border: hidden;
+    border-radius: 5px;
+}
+
+.bt:hover{
+    background-color: rgb(33, 114, 33);
+}
+
+line{
+    margin-top: 10px;
+}
+
+.nav2{
+    padding: 15px;
+    margin-left: 260px;
+}
+
+.custname{
+    margin-top: 5px;
+    margin-left: 103px;
+    font-size: 20px;
+}
+
+.cust{
+    font-size: 25px;
+}
+
+.img{
+    margin-left: 955px;
+    padding-bottom: 30px;
+    overflow: hidden;
+}
+
+.img:hover{
+    cursor: pointer;
+}
+
+.action .menu ul li{
+    margin-right: 50px;
+}
+
+.action .menu ul li a{
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.namecust{
+    margin-top: 30px;
+}
+
+.namecust .namecust1{
+    font-size: 20px;
+    color: rgb(71, 9, 129);
+}
+
+.namecust button{
+    margin-left: 30px;
+    background-color: rgb(246, 232, 103);
+}
+
+.namecust hr{
+    margin-top: 15px;
+    opacity: 0.4;
+}
+
+.mainbt{
+    margin-left: 250px;
+    margin-top: 20px;
+}
+
+.cred{
+    padding: 10px 30px 10px 30px;
+    background-color: green;
+    color: white;
+    font-size: larger;
+    font-weight: bolder;
+    border-radius: 10px;
+}
+
+.deb{
+    margin-left: 100px;
+    padding: 10px 30px 10px 30px;
+    background-color: red;
+    color: white;
+    font-size: larger;
+    font-weight: bolder;
+    border-radius: 10px;
+}
+
+.creddeb a{
+    text-decoration: none;
+}
+
+.mod1, .mod2, .mod3{
+    padding: 15px;
+}
+
+.modal-body label{
+    font-size: larger;
+    font-weight: bold;
+}
+
+.modal-body .mod1 .form-control{
+    padding: 6px;
+    margin-left: 37px;
+    margin-top: 8px;
+}
+
+.modal-body .mod2 .form-control{
+    padding: 10px;
+    margin-left: 37px;
+    margin-top: 8px;
+}
+
+.modal-body .mod3 .form-control{
+    padding: 15px;
+    margin-left: 37px;
+    margin-top: 8px;
+}
+
+.modal-body .mod2 .form-control1{
+    padding: 6px;
+    margin-left: 33px;
+    margin-top: 8px;
+}
+
+.item4 .finalname a{
+    text-decoration: none;
+    
+}
+
+.item4 .finalname a h3{
+    font-size: x-large;
+    font-weight: bolder;
+    margin-left: 60px;
+}
+
+.finalname hr{
+    margin-top: 15px;
+    opacity: 0.4;
+}
