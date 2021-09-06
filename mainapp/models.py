@@ -17,8 +17,8 @@ class Customer(models.Model):
 
 class Collection(models.Model):
     CATEGORY = (
-        ('Credit', 'Credit'),
-        ('Debit', 'Debit'),
+        ('Paid', 'Paid'),
+        ('Unpaid', 'Unpaid'),
     )
 
 

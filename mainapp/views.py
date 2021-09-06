@@ -116,6 +116,7 @@ def create_collection(request, pk):
             form.save()
             return redirect('home')
             request.user.collections.add(form)
+            
 
     context = {'form':form, 'customer': customer}
     return render(request, 'create_collection.html', context)
