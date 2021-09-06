@@ -82,23 +82,23 @@ WSGI_APPLICATION = 'book.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql',
-#        'NAME': 'aws_data',
-#        'USER': 'RishabhGupta',
-#        'PASSWORD': 'Rishabh07',
-#        'HOST': 'database-1.ccfra3iustib.ap-south-1.rds.amazonaws.com',
-#        'PORT': '5432'
-#    }
-#}
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'aws_data',
+        'USER': 'RishabhGupta',
+        'PASSWORD': 'Rishabh07',
+        'HOST': 'database-1.ccfra3iustib.ap-south-1.rds.amazonaws.com',
+        'PORT': '5432'
     }
 }
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+#}
 
 import dj_database_url
 
@@ -164,11 +164,11 @@ EMAIL_HOST_PASSWORD = 'Rishabh@12345'
 
 #S3 BUCKETS CONFIG
 
-#AWS_ACCESS_KEY_ID = 'AKIAV2AHRLCYGYG2RYYF'
-#AWS_SECRET_ACCESS_KEY = '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'
-#AWS_STORAGE_BUCKET_NAME = 'rishabh.bucket'
+AWS_ACCESS_KEY_ID = 'AKIAV2AHRLCYGYG2RYYF'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'rishabh.bucket'
 
-#AWS_S3_FILE_OVERWRITE = False
-#AWS_DEFAULT_ACL = None
-#DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 #STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
