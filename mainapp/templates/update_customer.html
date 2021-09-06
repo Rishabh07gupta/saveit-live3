@@ -132,7 +132,13 @@
 
 							<input type="text" name="address" placeholder="Address" class="form-control" {{form.address}} >
 						</div>
+
+							{% for message in messages %}
+							<p id="messages">{{message}}</p>
+							{% endfor %}
+
 							<div class="d-flex justify-content-center mt-3 login_container">
+								<input type="hidden" name="next" value="{{ request.path }}">
 				 				<input class="btn login_btn" type="submit" name="Submit">
 				   			</div>
 							<div class="mt">

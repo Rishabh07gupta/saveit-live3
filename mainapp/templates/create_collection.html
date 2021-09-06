@@ -144,12 +144,18 @@
 								{{form.customer}}
 							</div>
 						</div>
+
+							{% for message in messages %}
+							<p id="messages">{{message}}</p>
+							{% endfor %}
+
 							<div class="d-flex justify-content-center mt-3 login_container">
+								<input type="hidden" name="next" value="{{ request.path }}">
 				 				<input class="btn login_btn" type="submit" name="Submit">
 				   			</div>
 							<div class="mt">
 								<div class="d-flex justify-content-center links">
-								 <a href="{% url 'customer' customer.id%}" class="ml-2">Go Back</a>
+								<a href="{% url 'customer' customer.id%}" class="ml-2">Go Back</a>
 							</div>
 				</div>
 					</form>

@@ -83,7 +83,9 @@ def update_customer(request, pk):
         form = CustomerForm(request.POST, instance=customer)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            next = request.POST.get('next', '/')
+            messages.success(request, 'Updated//click go back')
+            return redirect(next)
     
     context = {'customer': customer, 'form': form}
     return render(request, 'update_customer.html', context)
@@ -114,7 +116,9 @@ def create_collection(request, pk):
         form = CollectionForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            next = request.POST.get('next', '/')
+            messages.success(request, 'Created//click go back')
+            return redirect(next)
             request.user.collections.add(form)
             
 
@@ -128,7 +132,9 @@ def update_collection(request, pk1):
         form = CollectionForm(request.POST, instance=collection)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            next = request.POST.get('next', '/')
+            messages.success(request, 'Updated//click go back')
+            return redirect(next)
     
     context = {'form': form, 'collection':collection}
     return render(request, 'updatecollection.html', context)
