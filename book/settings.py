@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,10 +22,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '_)afvpg5a)hqy((wfdf$$8isj%y7ji$^)pg8u1(39jda3*h&&@'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = config('DEBUG')
 
 ALLOWED_HOSTS = ['saveit-here.herokuapp.com', '127.0.0.1']
 
@@ -85,10 +86,10 @@ WSGI_APPLICATION = 'book.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'aws_data',
-        'USER': 'RishabhGupta',
-        'PASSWORD': 'Rishabh07',
-        'HOST': 'database-1.ccfra3iustib.ap-south-1.rds.amazonaws.com',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
         'PORT': '5432'
     }
 }
@@ -159,14 +160,14 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'getirightthere@gmail.com'
-EMAIL_HOST_PASSWORD = 'Rishabh@12345'
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 
 #S3 BUCKETS CONFIG
 
-AWS_ACCESS_KEY_ID = 'AKIAV2AHRLCYGYG2RYYF'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'rishabh.bucket'
+AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
 
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
