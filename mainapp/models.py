@@ -7,7 +7,7 @@ class Customer(models.Model):
     name = models.CharField(max_length=30, null=True)
     phone = models.CharField(max_length=12, null=True)
     date_added = models.DateTimeField(verbose_name='date added',null=True,auto_now_add=True)
-    due = models.CharField(max_length=10, null=True, blank=True)
+    #due = models.CharField(max_length=10, null=True, blank=True)
     Address = models.CharField(name="address", max_length=200, null=True, blank=True)
 
     def __str__(self):
@@ -17,8 +17,8 @@ class Customer(models.Model):
 
 class Collection(models.Model):
     CATEGORY = (
-        ('Credited', 'Credited'),
-        ('Debited', 'Debited'),
+        ('Paid', 'Paid'),
+        ('Unpaid', 'Unpaid'),
     )
 
 

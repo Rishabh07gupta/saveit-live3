@@ -102,10 +102,33 @@ def customerview(request, pk):
     customer = Customer.objects.get(id=pk)
     collections = customer.collection_set.all()
 
+    up = 0
+    p = 0
+    due = 0
+    D = []
+    C = []
+    
+    for i in collections:
+        if i.category == "Unpaid":
+            D.append(i.amount)
+
+        elif i.category == "Paid":
+            C.append(i.amount)
+
+    for i in D:
+        up = i+up
+    
+    for i in C:
+        p = i+p
+
+    if up >= p:
+        dues = p - up
+        due = -1*dues
+
     myfilter = CollectionFilter(request.GET, queryset=collections)
     collections = myfilter.qs
 
-    context = {'customer':customer, 'collections':collections, 'myfilter': myfilter}
+    context = {'customer':customer, 'collections':collections, 'myfilter': myfilter, 'due': due}
     return render(request, 'customer.html', context)
 
 def create_collection(request, pk):
@@ -116,6 +139,7 @@ def create_collection(request, pk):
         form = CollectionForm(request.POST)
         if form.is_valid():
             form.save()
+        
             next = request.POST.get('next', '/')
             messages.success(request, 'Created//click go back')
             return redirect(next)

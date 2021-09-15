@@ -19,4 +19,4 @@ class CustomerForm(ModelForm):
 
     class Meta:
         model = Customer
-        fields = ['name', 'phone', 'due', 'address']
+        fields = ['name', 'phone', 'address']
